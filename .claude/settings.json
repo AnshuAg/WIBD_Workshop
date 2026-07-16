@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(git -C /Users/anshuaggarwal/Documents/projects/WIBD/WIBD_Workshop branch -a)"
     ]
   }
 }

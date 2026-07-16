@@ -1,7 +1,6 @@
 name: dbt CI
 on:
   push:
-    branches: [main]
   pull_request:
 
 jobs:
@@ -14,7 +13,7 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - name: Build bronze
-        run: python scripts/load_bronze.py
+        run: echo "We are building the Data Pipeline workshop"
       - name: dbt build
         working-directory: dbt
         run: dbt build --profiles-dir .
