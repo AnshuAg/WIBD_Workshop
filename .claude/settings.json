@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(gh auth *)",
-      "Bash(git -C /Users/anshuaggarwal/Documents/projects/WIBD/WIBD_Workshop branch -a)"
+      "Bash(git branch *)",
+      "Bash(git checkout *)",
+      "Bash(git status *)",
+      "Bash(git ls-files *)",
+      "Bash(git check-ignore *)",
+      "Bash(./.venv/bin/pip show *)"
     ]
   }
 }
