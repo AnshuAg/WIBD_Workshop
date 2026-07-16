@@ -12,8 +12,6 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Build bronze
+      - name: Welcome message
         run: echo "We are building the Data Pipeline workshop"
-      - name: dbt build
-        working-directory: dbt
-        run: dbt build --profiles-dir .
+
