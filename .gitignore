@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+warehouse/*.duckdb
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+node_modules/
+evidence/.evidence/
+.DS_Store
