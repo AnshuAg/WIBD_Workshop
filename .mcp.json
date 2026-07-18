@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "duckdb": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-duckdb",
+        "--db-path",
+        "warehouse/retail.duckdb"
+      ],
+      "env": {}
+    }
+  }
+}

@@ -3,3 +3,5 @@
 dbt-core==1.11.12
 dbt-duckdb==1.10.1
 duckdb==1.5.4
+pytest==8.3.3
+openpyxl==3.1.5   # test-only: builds fixture .xlsx workbooks for tests/test_load_bronze.py
