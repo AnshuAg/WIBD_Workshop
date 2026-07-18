@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_revenue
+    description: >
+      One row per non-cancelled transaction line item — "what did we
+      actually sell?" Grain: one row per (invoice_no, stock_code) line.
+    columns:
+      - name: invoice_no
+        description: Invoice number; cancelled orders already excluded.
+        tests:
+          - not_null
+      - name: stock_code
+        description: Product (or non-product, e.g. postage/fee) code.
+        tests:
+          - not_null
+      - name: invoice_date
+        description: Timestamp of the transaction.
+        tests:
+          - not_null
+      - name: invoice_month
+        description: invoice_date truncated to month, for monthly aggregation.
+      - name: country
+        description: Customer's country as entered at checkout.
+      - name: customer_id
+        description: >
+          Customer identifier. Legitimately null for guest checkouts — not
+          an error, so no not_null test here.
+      - name: quantity
+        description: Units sold; always positive (returns already excluded).
+      - name: unit_price
+        description: Price per unit, in GBP.
+      - name: line_amount
+        description: quantity * unit_price. Expected to always be positive.
