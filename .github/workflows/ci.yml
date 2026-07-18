@@ -14,4 +14,6 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Welcome message
         run: echo "We are building the Data Pipeline workshop"
+      - name: Run tests
+        run: pytest tests/
 
