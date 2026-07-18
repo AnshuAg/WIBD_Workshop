@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_online_retail
+    description: >
+      One row per deduplicated transaction line item from the Online Retail
+      workbook, typed and cleaned from bronze.online_retail.
+    columns:
+      - name: invoice_no
+        description: Invoice number; prefixed 'C' for cancelled orders.
+        tests:
+          - not_null
+      - name: is_cancelled
+        description: >
+          True when invoice_no starts with 'C', per the UCI Online Retail
+          cancellation convention.
+      - name: stock_code
+        description: Product (or non-product, e.g. postage/fee) code.
+        tests:
+          - not_null
+      - name: description
+        description: >
+          Product description; legitimately null for some junk/adjustment
+          rows, so no not_null test here.
+      - name: quantity
+        description: Units sold, or returned if negative.
+      - name: invoice_date
+        description: Timestamp of the transaction.
+        tests:
+          - not_null
+      - name: unit_price
+        description: Price per unit, in GBP.
+      - name: customer_id
+        description: >
+          Customer identifier. Legitimately null for guest checkouts (~25%
+          of rows) — not an error, so no not_null test here.
+      - name: country
+        description: >
+          Customer's country as entered at checkout, not a standardized ISO
+          list (e.g. "EIRE", "Unspecified").
