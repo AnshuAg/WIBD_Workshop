@@ -1,4 +1,4 @@
 name: retail
 type: duckdb
 options:
-  filename: ../../warehouse/retail.duckdb
+  filename: ../../../warehouse/retail.duckdb

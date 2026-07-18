@@ -13,4 +13,5 @@ select
     quantity * unit_price as line_amount
 from {{ ref('stg_online_retail') }}
 where not is_cancelled
-  and quantity > 0
+  and quantity > 0 
+  and unit_price > 0
